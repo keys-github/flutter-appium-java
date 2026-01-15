@@ -1,0 +1,13 @@
+.DS_STORE
+*.class
+*.jar
+*.war
+*.ear
+target/
+out/
+test-output/
+surefire-reports/
+failsafe-reports/
+*.swp
+*.tmp
+*.log
