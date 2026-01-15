@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="100" name="Mobile" parallel="tests">
+    <test name="AndroidAppTest 1">
+        <parameter name="device" value="Galaxy.*"/>
+        <parameter name="version" value="15"/>
+        <parameter name="platform" value="android"/>
+        <classes>
+            <class name="AndroidApp_Flutter_Integration"/>
+        </classes>
+    </test>
+</suite>
