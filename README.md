@@ -1,4 +1,4 @@
-# Run Flutter Tests With Appium Java On TestMu AI
+# Run Flutter Tests With Appium Java — TestMu AI (Formerly LambdaTest)
 
 <img width="2350" height="1368" alt="Image" src="https://github.com/user-attachments/assets/7e7d3c93-bd86-4c43-a365-5007729542b7" />
 
@@ -13,7 +13,7 @@
   &nbsp; &#8901; &nbsp;
   <a href="https://www.testmu.ai/certifications/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample" target="_bank">Certifications</a>
   &nbsp; &#8901; &nbsp;
-  <a href="https://www.youtube.com/c/LambdaTest" target="_bank">YouTube</a>
+  <a href="https://www.youtube.com/@TestMuAI" target="_bank">YouTube</a>
 </p>
 &emsp;
 &emsp;
@@ -167,29 +167,23 @@ The [TestMu AI Community](https://community.testmu.ai/?utm_source=github&utm_med
 
 ## What's New At TestMu AI ❓
 
-To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.testmu.ai/) 
-      
-## About TestMu AI
+To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.testmu.ai/)
 
-[TestMu AI](https://www.testmu.ai/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample) (Formerly LambdaTest) is a Full Stack Agentic AI Quality Engineering platform that empowers teams to test intelligently and ship faster. Engineered for scale, it offers end-to-end AI agents to plan, author, execute, and analyze software quality. AI-native by design, the platform enables testing of web, mobile, and enterprise applications at any scale across real devices, real browsers, and custom real-world environments.    
+## 🚀 [LambdaTest is Now TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/)
 
-### Features
+👋 Welcome to TestMu AI, the next evolution of LambdaTest. As of January 2026, LambdaTest has officially rebranded to TestMu AI. We have evolved from a cross-browser testing cloud into a unified, AI-native quality engineering platform designed for the modern DevOps era.
 
-* Run Selenium, Cypress, Puppeteer, Playwright, and Appium automation tests across 3000+ real desktop and mobile environments.
-* Real-time cross browser testing on 3000+ environments.
-* Test on Real device cloud
-* Blazing fast test automation with HyperExecute
-* Accelerate testing, shorten job times and get faster feedback on code changes with Test At Scale.
-* Smart Visual Regression Testing on cloud
-* 120+ third-party integrations with your favorite tool for CI/CD, Project Management, Codeless Automation, and more.
-* Automated Screenshot testing across multiple browsers in a single click.
-* Local testing of web and mobile apps.
-* Online Accessibility Testing across 3000+ desktop and mobile browsers, browser versions, and operating systems.
-* Geolocation testing of web and mobile apps across 53+ countries.
-    
-[<img height="58" width="200" src="https://user-images.githubusercontent.com/70570645/171866795-52c11b49-0728-4229-b073-4b704209ddde.png">](https://accounts.lambdatest.com/register)
+Whether you have been part of the LambdaTest community for years or are just discovering TestMu AI, our mission remains the same: to help you ship faster with high-scale test execution, autonomous testing, and deep quality analytics.
 
-## We are here to help you :headphones:
+**🔄 Our Rebrand Journey**
 
-* Got a query? we are available 24x7 to help. [Contact Us](support@testmu.ai/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
-* For more info, visit - [TestMu AI](https://www.testmu.ai/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
+We chose the name TestMu AI to reflect our shift towards intelligent, autonomous testing. While our identity has changed, our core technology and commitment to the testing community stay the same.
+
+**✨ Specialties**
+
+- 🤖 AI-Native Test Execution (Formerly LambdaTest)
+- ⚡ Autonomous Test Automation
+- 🌐 Cross-Browser & Mobile Testing
+- 📊 Unified Quality Intelligence
+
+👉 Find [LambdaTest's New Home](https://www.testmuai.com/).
