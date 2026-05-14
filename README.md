@@ -1,199 +1,122 @@
-# Run Flutter Tests With Appium Java — TestMu AI (Formerly LambdaTest)
-
-<img width="2350" height="1368" alt="Image" src="https://github.com/user-attachments/assets/7e7d3c93-bd86-4c43-a365-5007729542b7" />
+﻿# Run Flutter Tests with Appium Java on TestMu AI (Formerly LambdaTest)
 
 <p align="center">
-  <a href="https://www.testmu.ai/blog/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample" target="_bank">Blog</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.testmu.ai/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample" target="_bank">Docs</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.testmu.ai/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample" target="_bank">Learning Hub</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.testmu.ai/newsletter/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample" target="_bank">Newsletter</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.testmu.ai/certifications/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample" target="_bank">Certifications</a>
-  &nbsp; &#8901; &nbsp;
-  <a href="https://www.youtube.com/@TestMuAI" target="_bank">YouTube</a>
+  <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+  <a href="https://central.sonatype.com/artifact/io.appium/java-client"><img src="https://img.shields.io/maven-central/v/io.appium/java-client.svg?style=for-the-badge&labelColor=000000" alt="Appium Java Client version"></a>
+  <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
 </p>
-&emsp;
-&emsp;
 
-In this 'Appium Flutter Java Automation' repo, we have covered the nuances of automating Flutter application testing using the following Appium drivers:
-- [Appium Flutter Driver](https://github.com/appium/appium-flutter-driver)
-- [Appium Flutter Integration Driver](https://github.com/AppiumTestDistribution/appium-flutter-integration-driver/)
+## Getting Started
 
-The testing is performed on Real Device Cloud infrastructure provided by [TestMu AI](https://www.testmu.ai/)
+[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
-## Steps for test execution
+With TestMu AI (Formerly LambdaTest), you can run Flutter app tests using Appium Java on real devices. This sample shows how to configure Flutter + Appium Java to run on the TestMu AI cloud.
 
-**Step 1**
+- [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
 
-Fetch the TestMu AI Credentials from the [TestMu AI Profile Section](https://accounts.lambdatest.com/security/username-accesskey) section. Export the environment variables *LT_USERNAME* and *LT_ACCESS_KEY* by triggering the following commands on the terminal:
+### Prerequisites
 
-For macOS:
+- Java JDK 11+
+- Maven 3.6+
+- A [TestMu AI](https://www.testmuai.com/) account with your username and access key
 
-```bash
-export LT_USERNAME=LT_USERNAME
-export LT_ACCESS_KEY=LT_ACCESS_KEY
-```
+### Setup
 
-For Linux:
+Clone and install dependencies:
 
 ```bash
-export LT_USERNAME=LT_USERNAME
-export LT_ACCESS_KEY=LT_ACCESS_KEY
+git clone https://github.com/LambdaTest/flutter-appium-java && cd flutter-appium-java
+make clean && make build
 ```
 
-For Windows:
+Set your credentials as environment variables.
+
+**macOS / Linux:**
 
 ```bash
-set LT_USERNAME=LT_USERNAME
-set LT_ACCESS_KEY=LT_ACCESS_KEY
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+export LT_TUNNEL="YOUR_TUNNEL_NAME"
 ```
 
-Alternatively, update the TestMu AI Credentials - [LT_USERNAME](https://github.com/LambdaTest/flutter-appium-java/blob/main/Makefile#L19) and [LT_ACCESS_KEY](https://github.com/LambdaTest/flutter-appium-java/blob/main/Makefile#L20) in Makefile.
-
-**Step 2**
-
-For testing, we have used the open-source [Provider Shopper Flutter sample app](https://github.com/flutter/samples/tree/main/provider_shopper). The app is built for testing with the Flutter Driver and Flutter Integration Driver respectively.
-
-You can download the Apps from the following locations:
-
-- [Provider Shopper Flutter sample app - Flutter Driver](https://pub-b8556f54909d4c829fb7c6761d7284fe.r2.dev/shoppers-app-appium-flutter-driver.apk)
-- [Provider Shopper Flutter sample app - Flutter Integration Driver](https://pub-b8556f54909d4c829fb7c6761d7284fe.r2.dev/shoppers-app-appium-flutter-integration-driver.apk)
-
-The app needs to be uploaded to the TestMu AI cloud storage. For this, run the following commands on tge terminal for uploading the app:
+**Windows:**
 
 ```bash
-curl -u "LT_USERNAME:LT_ACCESS_KEY" \
-  -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" \
-  -F "url=https://pub-b8556f54909d4c829fb7c6761d7284fe.r2.dev/shoppers-app-appium-flutter-driver.apk" \
-  -F "name=shoppers-app-appium-flutter-driver.apk" \
-  -F "custom_id=sampleName" \
-  -F "storage=url" \
-  -F "visibility=individual"
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+set LT_TUNNEL="YOUR_TUNNEL_NAME"
 ```
 
-```bash
-curl -u "LT_USERNAME:LT_ACCESS_KEY" \
-  -X POST "https://manual-api.lambdatest.com/app/upload/realDevice" \
-  -F "url=https://pub-b8556f54909d4c829fb7c6761d7284fe.r2.dev/shoppers-app-appium-flutter-integration-driver.apk" \
-  -F "name=shoppers-app-appium-flutter-integration-driver.apk" \
-  -F "custom_id=sampleName" \
-  -F "storage=url" \
-  -F "visibility=individual"
+### Run tests
+
+For Flutter Integration Driver:
+
+```
+make flutter-integration-driver-test
 ```
 
-If the command execution is successful, you would see a APP ID in the command output:
+For Flutter Driver:
 
-<img width="1488" height="249" alt="Image" src="https://github.com/user-attachments/assets/7799c47a-509f-42d1-a015-feaa3192f584" />
-
-You would also see the respective app in the [App Live App Dashboard](https://applive.lambdatest.com/app)
-
-<img width="1503" height="827" alt="Image" src="https://github.com/user-attachments/assets/a6101d69-62f4-46b9-b795-c6ecf3c97f08" />
-
-Now that both the apps are uploaded to the TestMu AI cloud storage, retrieve the App ID by clicking on the *Settings* button next to uploaded app:
-
-<img width="1488" height="692" alt="Image" src="https://github.com/user-attachments/assets/07b054f2-0da2-4dc2-a55a-272dac547941" />
-
-Next, update the App ID in the test files:
-
-- [Flutter Driver Test Code](https://github.com/LambdaTest/flutter-appium-java/blob/main/src/main/java/AndroidApp_Flutter.java#L18)
-- [Flutter Integration Driver Test Code](https://github.com/LambdaTest/flutter-appium-java/blob/main/src/main/java/AndroidApp_Flutter_Integration.java#L17)
-
-**Step 3**
-
-Run the *make clean* command on the terminal to clean the temporary files
-
-```bash
-make clean
+```
+make flutter-driver-test
 ```
 
-Run the *make build* command on the terminal to build the automation project
+View results on your TestMu AI dashboard.
 
-```bash
-make build
+### Local testing with TestMu AI Tunnel
+
+To test locally hosted apps, set up the TestMu AI tunnel. OS-specific guides:
+
+- [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
+- [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
+- [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
+
+Add the following to your capabilities:
+
+```js
+tunnel: true,
 ```
 
-<img width="1480" height="583" alt="Image" src="https://github.com/user-attachments/assets/dedc788c-d14c-4c34-a08f-3651e4a9a2c2" />
-<br/><br/>
+## Contributions
 
-**Step 4 - Automation with Appium Flutter Integration Driver**
+Contributions are welcome. Open an issue to discuss your idea before submitting a pull request. When reporting bugs, include your Java version, OS, and Appium version.
 
-Trigger the command ```make flutter-integration-driver-test``` to test Flutter app on the TestMu AI cloud grid using the Appium Flutter Integration Driver.
+## TestMu AI (Formerly LambdaTest) Community
 
-<img width="1485" height="591" alt="Image" src="https://github.com/user-attachments/assets/dca99c36-e78e-46d8-adff-f69686540f6a" />
+Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
+  
+## TestMu AI (Formerly LambdaTest) Certifications
 
-<img width="1039" height="408" alt="Image" src="https://github.com/user-attachments/assets/ca2ffc0b-71cc-4295-b924-b259214cf509" />
+Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) for testers, developers, and QA engineers. Validate your skills in Selenium, Cypress, Playwright, Appium, Espresso and more. Industry-recognized, shareable on LinkedIn, and built by practitioners, not marketers.
 
-Navigate to the [TestMu AI Automation Dashboard](https://automation.lambdatest.com/) to check the status of the test execution.
+## Learning Resources by TestMu AI (Formerly LambdaTest)
 
-<img width="1495" height="827" alt="Image" src="https://github.com/user-attachments/assets/3c407a14-e25b-4410-8f17-a0883f193b21" />
-<br/><br/>
+Learn modern testing through tutorials, guides, videos, and weekly updates:
 
-**Step 5 - Automation with Appium Flutter Driver**
+* [TestMu AI Blog](https://www.testmuai.com/blog/)
+* [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
+* [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
+* [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
+  
+## LambdaTest is Now TestMu AI
 
-Trigger the command ```make flutter-driver-test``` to test Flutter app on the TestMu AI cloud grid using the Appium Flutter Driver.
+On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/), the world's first fully autonomous **Agentic AI Quality Engineering Platform**.
 
-<img width="1488" height="491" alt="Image" src="https://github.com/user-attachments/assets/929ffe9a-a1b9-4d25-ba5b-67f3bd4e56c9" />
+Same team. Same infrastructure. Same customer accounts. All existing LambdaTest logins, scripts, capabilities, and integrations continue to work without change.
 
-<img width="1132" height="454" alt="Image" src="https://github.com/user-attachments/assets/f0faa4ef-67e7-4a6a-9fbb-ef477052fb83" />
+Find the new home for [LambdaTest](https://www.testmuai.com).
 
-Navigate to the [TestMu AI Automation Dashboard](https://automation.lambdatest.com/) to check the status of the test execution.
+### How LambdaTest Evolved into TestMu AI
 
-<img width="1495" height="827" alt="Image" src="https://github.com/user-attachments/assets/5ad05468-1189-4216-9f57-a392cc655a8e" />
-<br/>
+In 2017, we launched LambdaTest with a simple mission: make testing fast, reliable, and accessible. As LambdaTest grew, we expanded into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the full depth of the testing lifecycle.
 
-## Tutorials 📙
+As software development entered the AI era, testing had to evolve, too. We rebuilt the architecture to be AI-native from the ground up, with autonomous agents that **plan, author, execute, analyze, and optimize tests** while keeping humans in the loop. The platform integrates with your repos, CI, IDEs, and terminals, continuously learning from every code change and development signal.
 
-Check out our latest tutorials on Appium Flutter Java testing 👇
+That evolution earned a new name: **TestMu AI**, built for an AI-first future of quality engineering. TestMu is not a new name for us. It is the name of our annual community conference, which has brought together 100,000+ quality engineers to discuss how AI would reshape testing, long before that became an industry norm. 
 
-* [Automating Flutter Apps Using Appium Flutter Driver With Java](https://www.testmu.ai/blog/automating-flutter-apps-using-appium-flutter-driver/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
-* [Appium Flutter Integration Driver Guide](https://www.testmu.ai/support/docs/appium-flutter-integration/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
-* [A Complete Guide To Flutter Testing](https://www.testmu.ai/blog/flutter-testing/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
+What started as a high-performance cloud testing platform has transformed into an AI-native, multi-agent system powering a connected, end-to-end quality layer. That evolution defined a new identity: LambdaTest evolved into TestMu AI, built for an AI-first future of quality engineering.
 
-## Documentation & Resources :books:
+## Support
 
-      
-Visit the following links to learn more about TestMu AI's features, setup and tutorials around test automation, mobile app testing, responsive testing, and manual testing.
-
-* [TestMu AI Documentation](https://www.testmu.ai/support/docs/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
-* [TestMu AI Blog](https://www.testmu.ai/blog/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)
-* [TestMu AI Learning Hub](https://www.testmu.ai/learning-hub/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample)    
-
-## TestMu AI Community :busts_in_silhouette:
-
-The [TestMu AI Community](https://community.testmu.ai/?utm_source=github&utm_medium=repo&utm_campaign=appium-flutter-java-sample) allows people to interact with tech enthusiasts. Connect, ask questions, and learn from tech-savvy people. Discuss best practises in web development, testing, and DevOps with professionals from across the globe 🌎
-
-## What's New At TestMu AI ❓
-
-To stay updated with the latest features and product add-ons, visit [Changelog](https://changelog.testmu.ai/)
-
-## 🚀 LambdaTest is Now TestMu AI
-
-👋 Welcome to TestMu AI, the next evolution of LambdaTest. As of January 2026, [LambdaTest is Now TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/) - we have evolved from a cross-browser testing cloud into a unified, AI-native quality engineering platform designed for the modern DevOps era.
-
-Whether you have been part of the LambdaTest community for years or are just discovering TestMu AI, our mission remains the same: to help you ship faster with high-scale test execution, autonomous testing, and deep quality analytics.
-
-### 🔄 Our Rebrand Journey
-
-In 2017, we introduced LambdaTest with a clear mission: to become the world's most trusted cloud testing platform. We built a scalable, high-performance test cloud that eliminated flakiness, improved developer feedback cycles, and accelerated release velocity for teams worldwide.
-
-As LambdaTest grew, we expanded the platform into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the entire testing lifecycle. These capabilities enabled teams to test any stack, on any technology, at enterprise scale.
-
-Over time, we rebuilt the architecture to be AI-native from the ground up. What began as LambdaTest's high-performance testing cloud has now evolved into TestMu AI, an AI-native, multi-agent platform redefining modern quality engineering.
-
-We chose the name TestMu AI to reflect our shift towards intelligent, autonomous testing. While our identity has changed, our core technology and commitment to the testing community stay the same.
-
-👉 Find [LambdaTest's New Home](https://www.testmuai.com/).
-
-### 🔭 Explore TestMu AI
-
-The same infrastructure LambdaTest customers relied on, now delivered through autonomous AI agents.
-
-- [KaneAI](https://www.testmuai.com/kane-ai/)
-- [Agent-to-Agent Testing](https://www.testmuai.com/agent-to-agent-testing/)
-- [HyperExecute](https://www.testmuai.com/hyperexecute/)
-- [Real Device Cloud](https://www.testmuai.com/real-device-cloud/)
-- [Pricing](https://www.testmuai.com/pricing/)
-- [Documentation](https://www.testmuai.com/support/docs/)
+Got a question? Email [support@testmuai.com](mailto:support@testmuai.com) or chat with us 24x7 from our chat portal.
